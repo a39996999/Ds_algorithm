@@ -1,0 +1,142 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'b'
+  ClientHeight = 654
+  ClientWidth = 756
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel2: TPanel
+    Left = 184
+    Top = 0
+    Width = 577
+    Height = 657
+    Caption = 'Panel2'
+    TabOrder = 0
+    object PageControl1: TPageControl
+      Left = 1
+      Top = 1
+      Width = 575
+      Height = 655
+      ActivePage = TabSheet1
+      Align = alClient
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      object TabSheet1: TTabSheet
+        Caption = 'Maze'
+        ExplicitTop = 24
+        ExplicitHeight = 627
+        object Memo1: TMemo
+          Left = 0
+          Top = 0
+          Width = 567
+          Height = 624
+          Align = alClient
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -19
+          Font.Name = #26032#32048#26126#39636
+          Font.Style = []
+          Lines.Strings = (
+            'Memo1')
+          ParentFont = False
+          TabOrder = 0
+          ExplicitTop = -3
+        end
+      end
+      object TabSheet2: TTabSheet
+        Caption = 'Mouse'
+        ImageIndex = 1
+        ExplicitLeft = 0
+        ExplicitTop = 28
+        object Memo2: TMemo
+          Left = 0
+          Top = 0
+          Width = 567
+          Height = 624
+          Align = alClient
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -19
+          Font.Name = #26032#32048#26126#39636
+          Font.Style = []
+          Lines.Strings = (
+            'Memo2')
+          ParentFont = False
+          TabOrder = 0
+          ExplicitLeft = 176
+          ExplicitTop = 168
+          ExplicitWidth = 185
+          ExplicitHeight = 89
+        end
+      end
+    end
+  end
+  object Panel1: TPanel
+    Left = -2
+    Top = -29
+    Width = 195
+    Height = 682
+    TabOrder = 1
+    object Button1: TButton
+      Left = 40
+      Top = 104
+      Width = 97
+      Height = 49
+      Caption = 'Read file'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Toledo'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object StaticText1: TStaticText
+      Left = 32
+      Top = 54
+      Width = 124
+      Height = 28
+      Caption = #32769#40736#36208#36855#23470
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -24
+      Font.Name = #27161#26999#39636
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+    end
+    object Button2: TButton
+      Left = 40
+      Top = 176
+      Width = 97
+      Height = 49
+      Caption = 'Play'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Toledo'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+      OnClick = Button2Click
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 5
+    Top = 609
+  end
+end

@@ -1,0 +1,191 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 727
+  ClientWidth = 910
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 8
+    Top = 0
+    Width = 1040
+    Height = 793
+    Caption = 'Panel1'
+    TabOrder = 0
+    object PageControl1: TPageControl
+      Left = 1
+      Top = 1
+      Width = 1038
+      Height = 791
+      ActivePage = TabSheet1
+      Align = alClient
+      TabOrder = 0
+      object TabSheet1: TTabSheet
+        Caption = 'Single Link-List'
+        ExplicitLeft = 0
+        ExplicitTop = 28
+      end
+      object TabSheet2: TTabSheet
+        Caption = 'Double Link-List'
+        ImageIndex = 1
+      end
+      object TabSheet3: TTabSheet
+        Caption = 'Link-Stack'
+        ImageIndex = 2
+        ExplicitLeft = 0
+        ExplicitTop = 16
+      end
+    end
+  end
+  object Panel2: TPanel
+    Left = 8
+    Top = 19
+    Width = 894
+    Height = 264
+    TabOrder = 1
+    object StaticText1: TStaticText
+      Left = 88
+      Top = 48
+      Width = 42
+      Height = 17
+      Caption = 'Element'
+      TabOrder = 0
+    end
+    object StaticText2: TStaticText
+      Left = 88
+      Top = 112
+      Width = 36
+      Height = 17
+      Caption = 'Target'
+      TabOrder = 1
+    end
+    object Button1: TButton
+      Left = 336
+      Top = 40
+      Width = 75
+      Height = 25
+      Caption = 'Insert First'
+      TabOrder = 2
+    end
+    object Button2: TButton
+      Left = 472
+      Top = 40
+      Width = 75
+      Height = 25
+      Caption = 'Insert Last'
+      TabOrder = 3
+      OnClick = Button2Click
+    end
+    object Button3: TButton
+      Left = 336
+      Top = 104
+      Width = 75
+      Height = 25
+      Caption = 'Search Target'
+      TabOrder = 4
+    end
+    object Button4: TButton
+      Left = 456
+      Top = 104
+      Width = 123
+      Height = 25
+      Caption = 'Search_Insert Previous'
+      TabOrder = 5
+    end
+    object TButton
+      Left = 776
+      Top = 104
+      Width = 75
+      Height = 25
+      Caption = 'Delete'
+      TabOrder = 6
+    end
+    object Button7: TButton
+      Left = 776
+      Top = 192
+      Width = 75
+      Height = 25
+      Caption = 'Clean all'
+      TabOrder = 7
+    end
+    object Button8: TButton
+      Left = 616
+      Top = 104
+      Width = 115
+      Height = 25
+      Caption = 'Search_Insert Next'
+      TabOrder = 8
+    end
+    object Edit1: TEdit
+      Left = 169
+      Top = 42
+      Width = 121
+      Height = 21
+      TabOrder = 9
+    end
+    object Edit2: TEdit
+      Left = 169
+      Top = 106
+      Width = 121
+      Height = 21
+      TabOrder = 10
+    end
+  end
+  object PageControl2: TPageControl
+    Left = -5
+    Top = 264
+    Width = 910
+    Height = 446
+    ActivePage = TabSheet4
+    TabOrder = 2
+    object TabSheet4: TTabSheet
+      Caption = 'TabSheet4'
+      object Memo1: TMemo
+        Left = 0
+        Top = 0
+        Width = 902
+        Height = 418
+        Align = alClient
+        Lines.Strings = (
+          'Memo1')
+        TabOrder = 0
+      end
+    end
+    object TabSheet5: TTabSheet
+      Caption = 'TabSheet5'
+      ImageIndex = 1
+      object Memo2: TMemo
+        Left = 0
+        Top = 0
+        Width = 902
+        Height = 418
+        Align = alClient
+        Lines.Strings = (
+          'Memo2')
+        TabOrder = 0
+      end
+    end
+    object TabSheet6: TTabSheet
+      Caption = 'TabSheet6'
+      ImageIndex = 2
+      object Memo3: TMemo
+        Left = 0
+        Top = 0
+        Width = 902
+        Height = 418
+        Align = alClient
+        Lines.Strings = (
+          'Memo3')
+        TabOrder = 0
+      end
+    end
+  end
+end

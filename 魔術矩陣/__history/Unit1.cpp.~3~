@@ -1,0 +1,67 @@
+//---------------------------------------------------------------------------
+#include <vcl.h>
+#pragma hdrstop
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+int n ;
+int w[20][20] ;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+	Memo1->Clear() ;
+	Memo2->Clear() ;
+	Memo3->Clear() ;
+	Memo4->Clear() ;
+}
+//---------------------------------------------------------------------------
+void re(){
+	for ( int i = 0; i < 20; i++) {
+		for (int j = 0; j < 20; j++) {
+			w[i][j] = 0 ;
+		}
+	}
+}
+void generate(){
+    int i = 0 ;
+	int j = n/2+1 ;
+	for ( int key = 1 ; key <= n*n ; key++ ){
+		if ( key%n == 1 ){
+			i++ ;
+		}
+		else{
+			i-- ;
+			j++ ;
+		}
+		if ( i == 0 ){
+			i = n ;
+		}
+		if ( j == n+1 ){
+			j = 1 ;
+		}
+		w[i][j] = key ;
+	}
+	AnsiString s = "" ;
+	for ( int i = 1; i <= n; i++) {
+		for (int j = 1; j <= n; j++) {
+			s += IntToStr(w[i][j])+" " ;
+		}
+		s += "\r\n" ;
+	}
+	Form1 -> Memo1 -> Lines -> Add(s) ;
+	Form1 -> Memo3 -> Text = Format( ("%s"),ARRAYOFCONST((s))) ;
+	//Form1 -> Memo3 -> Lines -> Add(s) ;
+	//s.sprintf("%2s",Form1-> Memo3->Lines->Add(s) );
+}
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	n = StrToInt(Edit1->Text) ;
+	re() ;
+	generate() ;
+	Form1 -> Memo1 -> Lines -> Add("--------------") ;
+	Form1 -> Memo3 -> Lines -> Add("--------------") ;
+}
+//---------------------------------------------------------------------------

@@ -1,0 +1,73 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "rat.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+	Memo1->Lines->Clear() ;
+}
+//---------------------------------------------------------------------------
+int maze[20][20] ,m ,n ;
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	FILE *fp;
+
+  AnsiString out, fname;
+
+  int i, j;
+
+  if (OpenDialog1->Execute())
+  {
+	fname = OpenDialog1->FileName;
+	fp = fopen(fname.c_str(), "r+");
+	fscanf(fp, "%d %d", &m, &n);
+	Memo1->Lines->Add("m = "+IntToStr(m));
+	Memo1->Lines->Add("n  = "+IntToStr(n));
+
+	  for (i=1; i<=m; i++)
+
+		 for (j=1; j<=n; j++)
+
+             fscanf(fp, "%d", &maze[i][j]);
+
+	 for (i=1; i<=m; i++)
+
+     {   out = "";
+
+         for (j=1; j<=n; j++)
+
+             out += "  "+IntToStr(maze[i][j]);
+
+         Memo1->Lines->Add(out);
+
+	 }
+	 fclose(fp);
+
+  }
+
+  else  Memo1->Lines->Add("Nothing happens.");
+}
+//---------------------------------------------------------------------------
+typedef struct{
+	int x ,y ;
+	int dir_x[4] = {1 ,0 ,-1 ,0},dir_y[4] = {0 ,-1 ,0 ,1} ;
+}mouse ;
+/*typedef struct{
+
+}*/
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+	mouse p ;
+	p.x = 1 ;
+	p.y = 1 ;
+
+}
+//---------------------------------------------------------------------------

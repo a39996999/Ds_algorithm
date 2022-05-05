@@ -1,0 +1,65 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Link.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+	Memo1-> Lines-> Clear() ;
+	Memo2-> Lines-> Clear() ;
+	Memo3-> Lines-> Clear() ;
+}
+//---------------------------------------------------------------------------
+struct Node {
+	int data ;
+	Node *next ;
+};
+Node *head = NULL ;
+Node *current ;
+Node* createNode(int n){
+	Node *temp = (Node*) malloc(sizeof(temp)) ;
+	temp -> data = n ;
+	temp -> next = NULL ;
+	return temp ;
+}
+void printData(){
+	AnsiString s = "" ;
+	if (head == NULL) {
+		Form1 -> Memo1 -> Lines -> Add("is Empty!") ;
+	}
+	else{
+		while (head->next != NULL){
+		   //	Form1 -> Memo1 -> Lines -> Add(IntToStr(head->data) +"->") ;
+			s += IntToStr(head->data)+"->" ;
+			head = head->next ;
+		}
+
+		//Form1 -> Memo1 -> Lines -> Add(IntToStr(head->data) +"-><-") ;
+		s += IntToStr(head->data) +"-><-" ;
+		Form1 -> Memo1 -> Lines -> Add(s) ;
+	}
+}
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+	int n = StrToInt(Edit1->Text) ;
+   //	Node *node = createNode(n) ;
+	Node *p = head ;
+	if (head == NULL) {
+		head = createNode(n) ;
+	}
+	else{
+		while (p->next != NULL){
+			p = p->next ;
+		}
+		p->next = createNode(n) ;
+	}
+	printData() ;
+}
+//---------------------------------------------------------------------------
